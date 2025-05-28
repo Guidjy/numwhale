@@ -14,6 +14,12 @@ __pycache__/
 .env
 *.env
 
+
+# Django media and static (if collected)
+media/
+staticfiles/
+static/
+
 # Ignore setuptools build metadata and Python package artifacts
 *.egg-info/
 build/
@@ -23,12 +29,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Django media and static (if collected)
-media/
-staticfiles/
-static/
-
-# VS Code settings (optional)
+# VS Code settings
 .vscode/
 
 # === Node.js / Vite / React (frontend) ===
