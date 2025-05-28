@@ -9,5 +9,6 @@ The all in one math tool for computer science and engineering students.
 - numpy
 - matplotlib
 - sympy
+- setuptools
 ### node
 - tailwindcss @tailwindcss/vite
