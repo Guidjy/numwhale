@@ -11,5 +11,8 @@ The all in one math tool for computer science and engineering students.
 - sympy
 - setuptools
 - email-validator
+
+```pip install django djangorestframework django-cors-headers numpy matplotlib sympy setuptools email-validator -e .```
+
 ### node
 - tailwindcss @tailwindcss/vite
