@@ -1,6 +1,8 @@
 import numpy as np
 import math
 
+# tutorial: https://numpy.org/devdocs/user/absolute_beginners.html
+
 """The NumPy library contains multidimensional array data structures, such as the homogeneous, N-dimensional ndarray, 
 and a large library of functions that operate efficiently on these data structures.
 
@@ -110,3 +112,120 @@ y = np.array([[5, 6]])
 print(np.concatenate((x, y), axis=0))
 
 ### removing: In order to remove elements from an array, it’s simple to use indexing to select the elements that you want to keep. ( 0-0 )
+
+
+
+##### How do you know the shape and size of an array?
+
+# - ndarray.ndim will tell you the number of axes, or dimensions, of the array.
+# - ndarray.size will tell you the total number of elements of the array. This is the product of the elements of the array’s shape.
+# - ndarray.shape will display a tuple of integers that indicate the number of elements stored along each dimension of the array. 
+#   If, for example, you have a 2-D array with 2 rows and 3 columns, the shape of your array is (2, 3).
+
+array_example = np.array([[[0, 1, 2, 3],
+                           [4, 5, 6, 7]],
+                          [[0, 1, 2, 3],
+                           [4, 5, 6, 7]],
+                          [[0 ,1 ,2, 3],
+                           [4, 5, 6, 7]]])
+print(array_example.ndim)
+print(array_example.size)
+print(array_example.shape)
+
+
+
+##### Reshaping arrays
+
+
+# Using arr.reshape() will give a new shape to an array without changing the data. 
+# 0-0: Just remember that when you use the reshape method, the array you want to produce needs to have the same number of elements as the original array.
+a = np.arange(6)
+print(a)
+b = a.reshape(3, 2)
+print(b)
+
+
+
+##### How to add a new axis to an array
+
+
+### You can use np.newaxis and np.expand_dims to increase the dimensions of your existing array.
+
+# Using np.newaxis will increase the dimensions of your array by one dimension when used once. 
+a = np.array([1, 2, 3, 4, 5, 6])
+print(a.shape)
+a2 = a[np.newaxis, :]
+print(a2.shape)
+# 0-0: You can explicitly convert a 1D array to either a row vector or a column vector using np.newaxis
+
+# you can also expand an array by inserting a new axis at a specified position with np.expand_dims
+a = np.array([1, 2, 3, 4, 5, 6])
+print(a.shape)
+b = np.expand_dims(a, axis=1)
+print(b.shape)
+c = np.expand_dims(a, axis=0)
+print(c.shape)
+
+
+
+##### Indexing and slicing
+
+
+# You can index and slice NumPy arrays in the same ways you can slice Python lists.
+
+# If you want to select values from your array that fulfill certain conditions, it’s straightforward with NumPy.
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print(a[a < 5])  # prints all of the values in the array that are less than 5.
+five_up = five_up = (a > 5) | (a == 5)
+print(a[five_up])
+
+
+
+##### How to create an array from existing data
+
+# You can easily create a new array from a section of an existing array.
+a = np.array([1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+arr1 = a[3:8]
+print(arr1)
+
+# You can also stack two existing arrays, both vertically and horizontally.
+a1 = np.array([[1, 1],
+               [2, 2]])
+a2 = np.array([[3, 3],
+               [4, 4]])
+# stacking vertically
+a1_a2 = np.vstack((a1, a2))
+print(a1_a2)
+# stacking horizontally
+a1_a2 = np.hstack((a1, a2))
+print(a1_a2)
+
+
+
+
+##### basic array operations
+
+data = np.array([1, 2])
+ones = np.ones(2, dtype=int)
+print(data + ones)
+print(data - ones)
+print(data * data)
+print(data / data)
+
+# sum of the elements in an array
+a = np.array([1, 2, 3, 4])
+print(a.sum())
+
+# To add the rows or the columns in a 2D array, you would specify the axis.
+b = np.array([[1, 1], [2, 2]])
+print(b.sum(axis=0))  # row
+print(b.sum(axis=1))  # column
+
+
+
+##### Broadcasting (operation between a vector and a scalar or between arrays of two different sizes)
+
+data = np.array([1.0, 2.0])
+print(data * 1.6)
+# 0-0: The dimensions of your array must be compatible, for example, when the dimensions of both arrays are equal 
+# or when one of them is 1. If the dimensions are not compatible, you will get a ValueError.
