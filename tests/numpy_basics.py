@@ -1,4 +1,7 @@
+# %%
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 import math
 
 # tutorial: https://numpy.org/devdocs/user/absolute_beginners.html
@@ -229,3 +232,61 @@ data = np.array([1.0, 2.0])
 print(data * 1.6)
 # 0-0: The dimensions of your array must be compatible, for example, when the dimensions of both arrays are equal 
 # or when one of them is 1. If the dimensions are not compatible, you will get a ValueError.
+
+
+
+##### More useful array operations
+
+# NumPy also performs aggregation functions. In addition to min, max, and sum, you can easily run mean to get the average, 
+# prod to get the result of multiplying the elements together, std to get the standard deviation, and more.
+
+
+
+##### Creating matrices
+
+# you can pass Python lists of lists to create a 2-D array (or “matrix”) to represent them in NumPy.
+data = np.array([[1, 2], [3, 4], [5, 6]])
+print(data)
+
+
+
+##### Working with mathematical formulas
+
+# mean square error formular: error = 1/n * Σ(Y_predictioni - Yi)²
+predictions = np.ones(3, dtype=int)
+labels = np.arange(1, 4)
+print(predictions)
+print(labels)
+error = (1/predictions.size) * np.sum(np.square(predictions - labels))
+
+
+
+##### importing and exporting a CSV
+
+
+
+##### plotting arrays with matplotlib
+
+# %%
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = np.array([2, 1, 5, 7, 4, 6, 8, 14, 10, 9, 18, 20, 22])
+plt.plot(a)
+plt.show()
+
+x = np.linspace(0, 5, 20)
+y = np.linspace(0, 10, 20)
+plt.plot(x, y, 'purple') # line
+plt.plot(x, y, 'o')      # dots
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+X = np.arange(-5, 5, 0.15)
+Y = np.arange(-5, 5, 0.15)
+X, Y = np.meshgrid(X, Y)
+R = np.sqrt(X**2 + Y**2)
+Z = np.sin(R)
+ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis')
+
+# %%
