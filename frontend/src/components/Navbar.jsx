@@ -1,22 +1,25 @@
-import ThemeController from "./ThemeController"
+import Drawer from "./Drawer"
 
 export default function Navbar() {
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm px-3">
         {/* drawer button */}
         <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
-          </button>
+          <Drawer />
         </div>
         {/* nav links */}
-        <NavItem content={"Numwhale"} />
-        <NavItem content={"Plotting"} />
-        <NavItem content={"Ai Whale"} />
-        {/* theme controller */}
-        <div className="flex-1">
-          <ThemeController />
+        <NavItem id={1} content={"Numwhale"} />
+        <NavItem id={2} content={"Plotting"} />
+        <NavItem id={3} content={"Ai Whale"} />
+        {/* profile page */}
+        <div className="flex flex-1 justify-end">
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+          </a>
         </div>
       </div>
     </>
@@ -24,11 +27,11 @@ export default function Navbar() {
 }
 
 
-function NavItem({content}) {
+function NavItem({id, content}) {
   return (
     <>
       <div className="flex">
-        <a className="btn btn-ghost text-xl">{content}</a>
+        <a key={id} className="btn btn-ghost text-xl border-0 rounded-3xl hover:bg-base-200">{content}</a>
       </div>
     </>
   )
