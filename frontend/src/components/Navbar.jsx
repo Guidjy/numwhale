@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Drawer from "./Drawer"
 
 export default function Navbar() {
@@ -9,17 +10,17 @@ export default function Navbar() {
           <Drawer />
         </div>
         {/* nav links */}
-        <NavItem id={1} content={"Numwhale"} />
-        <NavItem id={2} content={"Plotting"} />
-        <NavItem id={3} content={"Ai Whale"} />
+        <NavItem page="" content={"Numwhale"} />
+        <NavItem page="plotting" content={"Plotting"} />
+        <NavItem page="" content={"Ai Whale"} />
         {/* profile page */}
         <div className="flex flex-1 justify-end">
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <Link to="/profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </>
@@ -27,11 +28,11 @@ export default function Navbar() {
 }
 
 
-function NavItem({id, content}) {
+function NavItem({page, content}) {
   return (
     <>
       <div className="flex">
-        <a key={id} className="btn btn-ghost text-xl border-0 rounded-3xl hover:bg-base-200">{content}</a>
+        <Link to={`/${page}`}  className="btn btn-ghost text-xl border-0 rounded-3xl hover:bg-base-200">{content}</Link>
       </div>
     </>
   )

@@ -16,4 +16,4 @@ The all in one math tool for computer science and engineering students.
 ```pip install django djangorestframework django-cors-headers numpy matplotlib sympy pandas setuptools email-validator -e .```
 
 ### node
-- tailwindcss @tailwindcss/vite
+- tailwindcss @tailwindcss/vite daisyui@latest react-router-dom

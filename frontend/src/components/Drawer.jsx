@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import ThemeController from "./ThemeController"
 
 export default function Drawer({ drawerItems }) {
 
   const tempDrawerItem = [
-    {id: 1, name: "item 1"},
-    {id: 2, name: "item 2"}
+    {id: 1, name: "item 1", page: ""},
+    {id: 2, name: "item 2", page: "plotting"}
   ];
 
   return(
@@ -27,7 +28,7 @@ export default function Drawer({ drawerItems }) {
           <ul className="menu bg-base-200 text-base-content w-80 p-4">
             {/* Sidebar content here */}
             {tempDrawerItem.map((item) => (
-              <DrawerItem id={item.id} content={item.name} />
+              <DrawerItem key={item.id} page={item.page} content={item.name} />
             ))}
           </ul>
           {/* theme controller */}
@@ -44,11 +45,11 @@ export default function Drawer({ drawerItems }) {
 }
 
 
-function DrawerItem({id,  content }){
+function DrawerItem({page, content}){
   return (
     <>
-      <li key={id}>
-        <a>{content}</a>
+      <li>
+        <Link to={`/${page}`} className="btn btn-ghost text-xl border-0 rounded-3xl hover:bg-base-300">{content}</Link>
       </li>
     </>
   )
