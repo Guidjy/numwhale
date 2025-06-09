@@ -16,7 +16,7 @@ __pycache__/
 
 
 # Django media and static
-media/
+#media/
 staticfiles/
 static/
 

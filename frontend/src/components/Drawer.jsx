@@ -25,18 +25,12 @@ export default function Drawer({ drawerItems }) {
         <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
         {/* side bar div */}
         <div className="min-h-full bg-base-200 flex flex-col">
-          <ul className="menu bg-base-200 text-base-content w-80 p-4">
+          <ul className="menu bg-base-200 text-base-content w-80 py-4 pl-0">
             {/* Sidebar content here */}
             {tempDrawerItem.map((item) => (
               <DrawerItem key={item.id} page={item.page} content={item.name} />
             ))}
           </ul>
-          {/* theme controller */}
-          <div className="flex flex-1 h-full justify-end items-end">
-            <div className="mr-3 mb-3">
-              <ThemeController />
-            </div>
-          </div>
         </div>
 
       </div>
@@ -49,7 +43,7 @@ function DrawerItem({page, content}){
   return (
     <>
       <li>
-        <Link to={`/${page}`} className="btn btn-ghost text-xl border-0 rounded-3xl hover:bg-base-300">{content}</Link>
+        <Link to={`/${page}`} className="btn btn-ghost text-xl border-0 rounded-r-3xl hover:bg-base-300">{content}</Link>
       </li>
     </>
   )
