@@ -10,8 +10,92 @@ import placeholderNumMeth from '../assets/placeholderNumMeth.png'
 import placeholderAi from '../assets/placeholderAi.webp'
 
 export default function Home() {
+
+  const drawerItems = [
+    {
+      id:1, 
+      name:"Calculus", 
+      page:"calculus", 
+      hasChildren:true, 
+      children: [
+        {
+          id:11, 
+          name:"Single Variable",
+          page:"single_variable",
+          hasChildren: true,
+          children: [
+            {
+              id: 111,
+              name: "Limit",
+              page: "limit",
+              hasChildren: false
+            },
+            {
+              id: 112,
+              name: "Derivative",
+              page: "derivative",
+              hasChildren: false
+            },
+            {
+              id: 113,
+              name: "Integral",
+              page: "integral",
+              hasChildren: false
+            }
+          ]
+        },
+        {
+          id: 12,
+          name: "Multivariable",
+          page: "multivariable",
+          hasChildren: true,
+          children: [
+            {
+              id: 121,
+              name: "Limit",
+              page: "limit",
+              hasChildren: false
+            },
+            {
+              id: 122,
+              name: "Derivative",
+              page: "derivative",
+              hasChildren: false
+            },
+            {
+              id: 123,
+              name: "Integral",
+              page: "integral",
+              hasChildren: true,
+              children: [
+                {
+                  id: 1231,
+                  name: "Double",
+                  page: "double",
+                  hasChildren: false
+                },
+                {
+                  id: 1232,
+                  name: "Triple",
+                  page: "triple",
+                  hasChildren: false
+                },
+                {
+                  id: 1233,
+                  name: "Jacobian",
+                  page: "jacobian",
+                  hasChildren: false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+
   return (
-    <MainLayout>
+    <MainLayout drawerItems={drawerItems}>
       <div className="flex justify-center">
         <div className="w-full flex flex-col items-center">
 

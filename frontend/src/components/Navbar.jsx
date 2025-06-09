@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import Drawer from "./Drawer"
 
-export default function Navbar() {
+export default function Navbar({ drawerItems }) {
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm px-3">
         {/* drawer button */}
         <div className="flex-none">
-          <Drawer />
+          <Drawer drawerItems={drawerItems} />
         </div>
         {/* nav links */}
         <NavItem page="" content={"Numwhale"} />
