@@ -21,4 +21,4 @@ The all in one math tool for computer science and engineering students.
 - @tailwindcss/vite
 - daisyui@latest
 
-- ```react-router-dom tailwindcss @tailwindcss/vite daisyui@latest```
+- ```npm install react-router-dom tailwindcss @tailwindcss/vite daisyui@latest```
