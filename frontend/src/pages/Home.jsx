@@ -12,31 +12,8 @@ import placeholderAi from '../assets/placeholderAi.webp'
 
 export default function Home() {
 
-  const calculusItems = (
-    <>
-      <li>
-        <Dropdown key={11} title={"Single variable"} className="w-ful" />
-      </li>
-      <li>
-        <Dropdown key={12} title={"Multivariable"} />
-      </li>
-    </>
-  );
-
-  const singleVariableItems = (
-    <>{/*TODO*/}</>
-  );
-
-  const drawerItems = (
-    <>
-      <li>
-        <Dropdown key={1} title={"Calculus"} items={calculusItems} />
-      </li>
-    </>
-  );
-
   return (
-    <MainLayout drawerItems={drawerItems}>
+    <MainLayout >
       <div className="flex justify-center">
         <div className="w-full flex flex-col items-center">
 

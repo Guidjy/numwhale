@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 import Home from './pages/Home'
 import Plotting from './pages/Plotting'
+import SingleLimit from './pages/SingleLimit'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plotting" element={<Plotting />} />
+          <Route path="calculus/single_variable/limit" element={<SingleLimit />} />
         </Routes>
       </Router>
     </>

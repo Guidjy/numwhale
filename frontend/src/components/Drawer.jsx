@@ -3,11 +3,6 @@ import ThemeController from "./ThemeController"
 
 export default function Drawer({ drawerItems }) {
 
-  const tempDrawerItem = [
-    {id: 1, name: "item 1", page: ""},
-    {id: 2, name: "item 2", page: "plotting"}
-  ];
-
   return(
     <div className="drawer">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -25,7 +20,7 @@ export default function Drawer({ drawerItems }) {
         <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
         {/* side bar div */}
         <div className="min-h-full bg-base-200 flex flex-col pt-14">
-          <ul className="menu bg-base-200 text-base-content w-80 py-4 pl-0">
+          <ul className="menu bg-base-200 text-base-content w-80 py-4 px-2">
             {/* Sidebar content here */}
             {drawerItems}
           </ul>
@@ -41,7 +36,7 @@ function DrawerItem({page, content}){
   return (
     <>
       <li>
-        <Link to={`/${page}`} className="btn btn-ghost text-xl border-0 rounded-r-3xl hover:bg-base-300">{content}</Link>
+        <Link to={`/${page}`} className="btn btn-ghost text-xl border-0 rounded-r-3xl">{content}</Link>
       </li>
     </>
   )
