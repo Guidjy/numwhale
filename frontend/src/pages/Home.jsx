@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout";
 // components
 import AboutCard from "../components/AboutCard";
+import { Dropdown, DropdownItem } from "../components/Dropdown";
 // assets
 import numwhaleImage from '../assets/numwhale.png';
 import placeholderPlot from '../assets/placeholderPlot.webp';
@@ -11,88 +12,28 @@ import placeholderAi from '../assets/placeholderAi.webp'
 
 export default function Home() {
 
-  const drawerItems = [
-    {
-      id:1, 
-      name:"Calculus", 
-      page:"calculus", 
-      hasChildren:true, 
-      children: [
-        {
-          id:11, 
-          name:"Single Variable",
-          page:"single_variable",
-          hasChildren: true,
-          children: [
-            {
-              id: 111,
-              name: "Limit",
-              page: "limit",
-              hasChildren: false
-            },
-            {
-              id: 112,
-              name: "Derivative",
-              page: "derivative",
-              hasChildren: false
-            },
-            {
-              id: 113,
-              name: "Integral",
-              page: "integral",
-              hasChildren: false
-            }
-          ]
-        },
-        {
-          id: 12,
-          name: "Multivariable",
-          page: "multivariable",
-          hasChildren: true,
-          children: [
-            {
-              id: 121,
-              name: "Limit",
-              page: "limit",
-              hasChildren: false
-            },
-            {
-              id: 122,
-              name: "Derivative",
-              page: "derivative",
-              hasChildren: false
-            },
-            {
-              id: 123,
-              name: "Integral",
-              page: "integral",
-              hasChildren: true,
-              children: [
-                {
-                  id: 1231,
-                  name: "Double",
-                  page: "double",
-                  hasChildren: false
-                },
-                {
-                  id: 1232,
-                  name: "Triple",
-                  page: "triple",
-                  hasChildren: false
-                },
-                {
-                  id: 1233,
-                  name: "Jacobian",
-                  page: "jacobian",
-                  hasChildren: false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ];
+  const calculusItems = (
+    <>
+      <li>
+        <Dropdown key={11} title={"Single variable"} className="w-ful" />
+      </li>
+      <li>
+        <Dropdown key={12} title={"Multivariable"} />
+      </li>
+    </>
+  );
+
+  const singleVariableItems = (
+    <>{/*TODO*/}</>
+  );
+
+  const drawerItems = (
+    <>
+      <li>
+        <Dropdown key={1} title={"Calculus"} items={calculusItems} />
+      </li>
+    </>
+  );
 
   return (
     <MainLayout drawerItems={drawerItems}>

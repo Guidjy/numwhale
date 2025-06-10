@@ -24,23 +24,10 @@ export default function Drawer({ drawerItems }) {
       <div className="drawer-side">
         <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
         {/* side bar div */}
-        <div className="min-h-full bg-base-200 flex flex-col">
+        <div className="min-h-full bg-base-200 flex flex-col pt-14">
           <ul className="menu bg-base-200 text-base-content w-80 py-4 pl-0">
             {/* Sidebar content here */}
-            {drawerItems.map((item) => {
-              const area = item;
-              console.log(area)
-              if (area.hasChildren) {
-                const subjects = area.children;
-                console.log(subjects);
-                subjects.map((subject) => {
-                  if (subject.hasChildren) {
-                    const topics = subject.children;
-                    console.log(topics);
-                  }
-                })
-              }
-            })}
+            {drawerItems}
           </ul>
         </div>
 
