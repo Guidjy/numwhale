@@ -2,8 +2,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import User
-from .serializers import UserSerializer
+from .models import User, Aluno
+from .serializers import UserSerializer, AlunoSerilizer
 
 from email_validator import validate_email, EmailNotValidError
 
@@ -165,3 +165,20 @@ def user_profile(request):
     user = request.user
     serializer = UserSerializer(user)
     return Response({'user': serializer.data}, status=200)
+
+
+@api_view(['POST'])
+def criar_aluno(request):
+    numero = request.data.get('numero')
+    nome = request.data.get('nome')
+    
+    novo_aluno = Aluno.objects.create(numero=numero, nome=nome)
+    serializer = AlunoSerilizer(novo_aluno)
+    return Response({'sucesso': 'mensagem de sucesso', 'aluno': serializer.data})
+
+
+@api_view(['GET'])
+def buscar_aluno(request, id):
+    aluno = Aluno.objects.get(id=id)
+    serializer = AlunoSerilizer(aluno)
+    return Response(serializer.data)
