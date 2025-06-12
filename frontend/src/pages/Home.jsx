@@ -2,7 +2,7 @@
 import MainLayout from "../layouts/MainLayout";
 // components
 import AboutCard from "../components/AboutCard";
-import { Dropdown, DropdownItem } from "../components/Dropdown";
+import { Dropdown, DropDownLink } from "../components/Dropdown";
 // assets
 import numwhaleImage from '../assets/numwhale.png';
 import placeholderPlot from '../assets/placeholderPlot.webp';

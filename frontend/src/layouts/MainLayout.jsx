@@ -1,15 +1,15 @@
 import Navbar from '../components/Navbar'
-import { Dropdown, DropdownItem } from '../components/Dropdown';
+import { Dropdown, DropDownLink } from '../components/Dropdown';
 
 export default function MainLayout({ children }) {
   
     const calculusItems = (
       <>
         <li>
-          <DropdownItem key={11} title={"Single variable"} page={"calculus/single_variable"} />
+          <DropDownLink key={11} title={"Single variable"} page={"calculus/single_variable"} />
         </li>
         <li>
-          <DropdownItem key={11} title={"Multivariable"} page={"calculus/multivariable"} />
+          <DropDownLink key={11} title={"Multivariable"} page={"calculus/multivariable"} />
         </li>
       </>
     );

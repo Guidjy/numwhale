@@ -18,8 +18,19 @@ export function Dropdown({ title, items }) {
 }
 
 
-export function DropdownItem({ title, page }) {
+export function DropDownLink({ title, page }) {
   return (
     <Link to={`/${page}`} className="w-full text-center">{title}</Link>
+  )
+}
+
+
+export function DropDownItem({ title, onClick }) {
+  return (
+    <>
+      <li>
+        <div>{title}</div>
+      </li>
+    </>
   )
 }
