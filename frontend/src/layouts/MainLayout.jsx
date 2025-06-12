@@ -3,41 +3,13 @@ import { Dropdown, DropdownItem } from '../components/Dropdown';
 
 export default function MainLayout({ children }) {
   
-  const singleVariableItems = (
-    <>
-      <li>
-        <DropdownItem key={111} title={"Limit"} page={"calculus/single_variable/limit"} />
-      </li>
-      <li>
-        <DropdownItem key={112} title={"Derivative"} page={"calculus/single_variable/derivative"} />
-      </li>
-      <li>
-        <DropdownItem key={113} title={"Integral"} page={"calculus/single_variable/integral"} />
-      </li>
-    </>
-  );
-  
-    const MultiVariableItems = (
-      <>
-        <li>
-          <DropdownItem key={121} title={"Limit"} page={"calculus/multivariable/limit"} />
-        </li>
-        <li>
-          <DropdownItem key={122} title={"Derivative"} page={"calculus/multivariable/derivative"} />
-        </li>
-        <li>
-          <DropdownItem key={123} title={"Integral"} page={"calculus/multivariable/integral"} />
-        </li>
-      </>
-    );
-  
     const calculusItems = (
       <>
         <li>
-          <Dropdown key={11} title={"Single variable"} items={singleVariableItems}  />
+          <DropdownItem key={11} title={"Single variable"} page={"calculus/single_variable"} />
         </li>
         <li>
-          <Dropdown key={12} title={"Multivariable"} items={MultiVariableItems} />
+          <DropdownItem key={11} title={"Multivariable"} page={"calculus/multivariable"} />
         </li>
       </>
     );

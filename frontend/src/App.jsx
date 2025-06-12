@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 import Home from './pages/Home'
 import Plotting from './pages/Plotting'
-import SingleLimit from './pages/SingleLimit'
+import SingleLimit from './pages/SingleVarCalc'
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plotting" element={<Plotting />} />
-          <Route path="calculus/single_variable/limit" element={<SingleLimit />} />
+          <Route path="calculus/single_variable/" element={<SingleLimit />} />
         </Routes>
       </Router>
     </>
