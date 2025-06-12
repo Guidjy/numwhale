@@ -1,10 +1,11 @@
 import NumwhaleLayout from "../layouts/NumwhaleLayout";
+import Calculator from "../components/Calculator";
 
 
 export default function SingleVarCalc() {
   return (
-    <NumwhaleLayout title={"Limit"}>
-      <h1>0-00-0</h1>
+    <NumwhaleLayout title={"Single Variable"}>
+      <Calculator />
     </NumwhaleLayout>
   )
 }
