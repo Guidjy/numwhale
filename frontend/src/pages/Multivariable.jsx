@@ -4,7 +4,7 @@ import Calculator from "../components/Calculator";
 import { Dropdown, DropDownItem } from "../components/Dropdown";
 
 
-export default function SingleVarCalc() {
+export default function MultiVarCalc() {
 
   const [operation, setOperation] = useState('limit');
 
@@ -17,7 +17,7 @@ export default function SingleVarCalc() {
   )
 
   return (
-    <NumwhaleLayout title={"Single Variable"}>
+    <NumwhaleLayout title={"Multivariable"}>
       <div className="grid grid-cols-1">
         <div className="mb-5">
           <Calculator />

@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import { Dropdown, DropDownLink } from '../components/Dropdown';
+import { Link } from 'react-router-dom';
 
 export default function MainLayout({ children }) {
   
@@ -18,6 +19,9 @@ export default function MainLayout({ children }) {
       <>
         <li>
           <Dropdown key={1} title={"Calculus"} items={calculusItems} />
+        </li>
+        <li>
+          <Link className='w-full text-center block text-2xl' to="/linear_algebra">Linear Algebra</Link>
         </li>
       </>
     );
